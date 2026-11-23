@@ -1,0 +1,52 @@
+@use 'variables' as *;
+
+
+/* #region RESETS */
+html {
+    scroll-behavior: smooth;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+button,
+input,
+select,
+textarea {
+    font: inherit;
+}
+
+img,
+video {
+    max-width: 100%;
+    height: auto;
+}
+
+figure {
+    margin-right: 0;
+    margin-left: 0;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+body {
+    margin: 0;
+    background-color: $light-background;
+    color: $light-text;
+    font-family: Arial, sans-serif;
+}
+
+/* #endregion RESETS */
