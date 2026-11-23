@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import Home from './pages/Home'
 import Navigation from './components/Navigation'
 import './App.css'
 
@@ -8,15 +9,13 @@ function App() {
 
   return (
     <>
-      {activePage === 'home' && <h1>Home page</h1>}
-
+      {activePage === 'home' && <Home />}
       {activePage === 'archive' && <h1>Archive page</h1>}
-
       {activePage === 'popular' && <h1>Popular page</h1>}
-
       {activePage === 'settings' && <h1>Settings page</h1>}
 
-      <Navigation activePage={activePage} setActivePage={setActivePage} />
+      <Navigation activePage={activePage} setActivePage={setActivePage}
+      />
     </>
   )
 }

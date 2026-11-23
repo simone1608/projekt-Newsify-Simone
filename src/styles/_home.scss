@@ -1,0 +1,50 @@
+.home {
+    &__header {
+        padding: 20px;
+        text-align: center;
+
+        h1 {
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-size: 24px;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            margin-top: 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #f0f0f0;
+            font-size: 14px;
+        }
+    }
+}
+
+.category {
+    margin: 0 20px;
+    border-bottom: 1.5px solid #ddd;
+
+    &__summary {
+        padding: 15px 0;
+        font-size: 20px;
+        font-weight: bold;
+        cursor: pointer;
+        list-style: none;
+    }
+
+    &__arrow {
+        transition: transform 0.3s ease;
+    }
+
+    &[open] &__arrow {
+        transform: rotate(90deg);
+    }
+
+    &__summary::-webkit-details-marker {
+        display: none;
+    }
+
+    &__content {
+        padding-bottom: 15px;
+    }
+}
