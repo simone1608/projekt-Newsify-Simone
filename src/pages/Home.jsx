@@ -1,4 +1,5 @@
 import Category from '../components/Category'
+import News from '../components/News'
 
 export default function Home() {
     return (
@@ -9,7 +10,7 @@ export default function Home() {
             </header>
 
             <Category title="Health">
-                <p>Health news</p>
+                <News />
             </Category>
 
             <Category title="Sport">

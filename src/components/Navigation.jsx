@@ -1,6 +1,6 @@
 export default function Navigation({ activePage, setActivePage }) {
     return (
-        <nav>
+        <nav className="navigation">
             <button
                 className={activePage === 'home' ? 'active' : ''}
                 onClick={() => setActivePage('home')}>
