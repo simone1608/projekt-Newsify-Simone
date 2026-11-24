@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import NewsCard from './NewsCard'
 
-export default function News({ query }) {
+export default function News({ query, category }) {
 
     const [news, setNews] = useState(null)
     const [loading, setLoading] = useState(true)
@@ -32,7 +32,7 @@ export default function News({ query }) {
             {error && <p>Error: {error}</p>}
 
             {news && news.map((article, index) => (
-                <NewsCard key={index} article={article} />
+                <NewsCard key={index} article={article} category={category} />
             ))}
         </div>
     )

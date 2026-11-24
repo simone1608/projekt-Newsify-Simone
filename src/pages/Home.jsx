@@ -10,32 +10,32 @@ export default function Home({ categories }) {
 
             {categories.europe && (
                 <Category title="Europe">
-                    <News query="Europe" />
+                    <News query="Europe" category="Europe" />
                 </Category>
             )}
 
 
             {categories.health && (
                 <Category title="Health">
-                    <News query="Health" />
+                    <News query="Health" category="Health" />
                 </Category>
             )}
 
             {categories.sport && (
                 <Category title="Sport">
-                    <News query="Sport" />
+                    <News query="Sport" category="Sport" />
                 </Category>
             )}
 
             {categories.business && (
                 <Category title="Business">
-                    <News query="Business" />
+                    <News query="Business" category="Business" />
                 </Category>
             )}
 
             {categories.travel && (
                 <Category title="Travel">
-                    <News query="Travel" />
+                    <News query="Travel" category="Travel" />
                 </Category>
             )}
 

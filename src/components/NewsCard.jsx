@@ -1,7 +1,7 @@
 import { useState } from "react"
 import { FaRegBookmark, FaBookmark } from "react-icons/fa6"
 
-export default function NewsCard({ article }) {
+export default function NewsCard({ article, category }) {
 
     const [touchStart, setTouchStart] = useState(0)
     const [touchEnd, setTouchEnd] = useState(0)
@@ -28,10 +28,11 @@ export default function NewsCard({ article }) {
         localStorage.setItem(`savedArticle-${article._id}`, newSavedStatus)
 
         const savedArticles = JSON.parse(localStorage.getItem("savedArticles") || "[]")
+        const alreadySaved = savedArticles.some(savedArticle => savedArticle._id === article._id)
 
-        if (newSavedStatus) {
-            savedArticles.push(article)
-        } else {
+        if (newSavedStatus && !alreadySaved) {
+            savedArticles.push({ ...article, category: category })
+        } else if (!newSavedStatus) {
             const updatedArticles = savedArticles.filter(
                 savedArticle => savedArticle._id !== article._id
             )
