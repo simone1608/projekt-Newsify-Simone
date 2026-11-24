@@ -5,38 +5,37 @@ export default function Home({ categories }) {
     return (
         <main className="home">
             <header className="home__header">
-                <h1>Newsify</h1>
                 <input type="text" name="" id="" placeholder="Search news" />
             </header>
 
             {categories.europe && (
                 <Category title="Europe">
-                    <p>Europe news</p>
+                    <News query="Europe" />
                 </Category>
             )}
 
 
             {categories.health && (
                 <Category title="Health">
-                    <News />
+                    <News query="Health" />
                 </Category>
             )}
 
             {categories.sport && (
                 <Category title="Sport">
-                    <p>Sport news</p>
+                    <News query="Sport" />
                 </Category>
             )}
 
             {categories.business && (
                 <Category title="Business">
-                    <p>Business news</p>
+                    <News query="Business" />
                 </Category>
             )}
 
             {categories.travel && (
                 <Category title="Travel">
-                    <p>Travel news</p>
+                    <News query="Travel" />
                 </Category>
             )}
 

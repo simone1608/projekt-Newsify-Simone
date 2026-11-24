@@ -1,4 +1,5 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
+import Header from './components/Header'
 import Home from './pages/Home'
 import Settings from './pages/Settings'
 import Navigation from './components/Navigation'
@@ -7,16 +8,26 @@ import './App.css'
 function App() {
 
   const [activePage, setActivePage] = useState('home')
-  const [categories, setCategories] = useState({
-    europe: true,
-    health: true,
-    sport: true,
-    business: true,
-    travel: true
+  const [categories, setCategories] = useState(() => {
+    const savedCategories = localStorage.getItem('categories')
+
+    return savedCategories ? JSON.parse(savedCategories) : {
+      europe: true,
+      health: true,
+      sport: true,
+      business: true,
+      travel: true
+    }
   })
+
+  useEffect(() => {
+    localStorage.setItem('categories', JSON.stringify(categories))
+  }, [categories])
 
   return (
     <>
+      <Header />
+
       {activePage === 'home' && (<Home categories={categories} />)}
       {activePage === 'archive' && <h1>Archive page</h1>}
       {activePage === 'popular' && <h1>Popular page</h1>}

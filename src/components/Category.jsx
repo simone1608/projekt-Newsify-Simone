@@ -4,7 +4,10 @@ export default function Category({ title, children }) {
     return (
         <details className="category">
             <summary className="category__summary">
-                {title}
+                <div>
+                    <img src="/newsify_logo.svg" alt="Newsify logo" />
+                    {title}
+                </div>
                 <IoChevronForward className="category__arrow" />
             </summary>
             <div className="category__content">

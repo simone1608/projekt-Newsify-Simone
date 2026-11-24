@@ -1,3 +1,5 @@
+import '../styles/_settings.scss'
+
 export default function Settings({ categories, setCategories }) {
     return (
         <main className="settings">
@@ -6,32 +8,47 @@ export default function Settings({ categories, setCategories }) {
 
             <div className="settings__categories">
                 <label>
-                    <span>Europe</span>
-                    <input type="checkbox"
+                    <div>
+                        <img src="/newsify_logo.svg" alt="Newsify logo" />
+                        <span>Europe</span>
+                    </div>
+                    <input className="settings__switch" type="checkbox"
                         checked={categories.europe}
                         onChange={() => setCategories({ ...categories, europe: !categories.europe })} />
                 </label>
                 <label>
-                    <span>Health</span>
-                    <input type="checkbox"
+                    <div>
+                        <img src="/newsify_logo.svg" alt="Newsify logo" />
+                        <span>Health</span>
+                    </div>
+                    <input className="settings__switch" type="checkbox"
                         checked={categories.health}
                         onChange={() => setCategories({ ...categories, health: !categories.health })} />
                 </label>
                 <label>
-                    <span>Sport</span>
-                    <input type="checkbox"
+                    <div>
+                        <img src="/newsify_logo.svg" alt="Newsify logo" />
+                        <span>Sport</span>
+                    </div>
+                    <input className="settings__switch" type="checkbox"
                         checked={categories.sport}
                         onChange={() => setCategories({ ...categories, sport: !categories.sport })} />
                 </label>
                 <label>
-                    <span>Business</span>
-                    <input type="checkbox"
+                    <div>
+                        <img src="/newsify_logo.svg" alt="Newsify logo" />
+                        <span>Business</span>
+                    </div>
+                    <input className="settings__switch" type="checkbox"
                         checked={categories.business}
                         onChange={() => setCategories({ ...categories, business: !categories.business })} />
                 </label>
                 <label>
-                    <span>Travel</span>
-                    <input type="checkbox"
+                    <div>
+                        <img src="/newsify_logo.svg" alt="Newsify logo" />
+                        <span>Travel</span>
+                    </div>
+                    <input className="settings__switch" type="checkbox"
                         checked={categories.travel}
                         onChange={() => setCategories({ ...categories, travel: !categories.travel })} />
                 </label>
