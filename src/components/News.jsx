@@ -10,11 +10,20 @@ export default function News({ query, category }) {
     useEffect(() => {
         async function fetchNews() {
             try {
-                const response = await fetch(`https://api.nytimes.com/svc/search/v2/articlesearch.json?q=${query}&api-key=${import.meta.env.VITE_NYT_API_KEY}`)
+                const response = await fetch(
+                    `https://api.nytimes.com/svc/search/v2/articlesearch.json?q=${query}&api-key=${import.meta.env.VITE_NYT_API_KEY}`
+                )
+
+                if (!response.ok) {
+                    if (response.status === 429) {
+                        throw new Error('Too many requests. Please try again later.')
+                    }
+
+                    throw new Error('Could not fetch news.')
+                }
+
                 const data = await response.json()
-
                 setNews(data.response.docs)
-
             } catch (error) {
                 setError(error.message)
             } finally {
