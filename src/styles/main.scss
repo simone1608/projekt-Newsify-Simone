@@ -1,6 +1,7 @@
 /* #region partials */
 @use 'variables' as *;
 @use 'home';
+@use 'settings';
 
 /* #endregion partials */
 
@@ -49,7 +50,22 @@ body {
     margin: 0;
     background-color: $light-background;
     color: $light-text;
-    font-family: Arial, sans-serif;
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 /* #endregion RESETS */
+
+/* #region Dark/Light mode */
+.app {
+    min-height: 100vh;
+    background-color: #ffffff;
+    color: #333333;
+    transition: background-color 0.3s ease, color 0.3s ease;
+
+    &.dark-mode {
+        background-color: #252525;
+        color: #f5f5f5;
+    }
+}
+
+/* #endregion Dark/Light mode */

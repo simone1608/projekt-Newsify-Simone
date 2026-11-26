@@ -1,6 +1,6 @@
 import '../styles/_settings.scss'
 
-export default function Settings({ categories, setCategories }) {
+export default function Settings({ categories, setCategories, darkMode, setDarkMode }) {
     return (
         <main className="settings">
             <h1>Settings</h1>
@@ -53,6 +53,13 @@ export default function Settings({ categories, setCategories }) {
                         onChange={() => setCategories({ ...categories, travel: !categories.travel })} />
                 </label>
             </div>
+
+            <div className="settings__appearance">
+                <button onClick={() => setDarkMode(!darkMode)}>
+                    {darkMode ? 'Switch to Light mode' : 'Switch to Dark mode'}
+                </button>
+            </div>
+
         </main>
     )
 }
