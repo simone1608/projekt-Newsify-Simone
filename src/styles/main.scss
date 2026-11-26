@@ -1,5 +1,4 @@
 /* #region partials */
-@use 'variables' as *;
 @use 'home';
 @use 'settings';
 
@@ -48,8 +47,8 @@ a {
 
 body {
     margin: 0;
-    background-color: $light-background;
-    color: $light-text;
+    background-color: #f5f5f5;
+    color: #222222;
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
